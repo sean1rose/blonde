@@ -19,7 +19,7 @@ const Layout = ({children}) => (
   <AppWrapper>
 
     <Header>
-      <Logo to="/">Firefly</Logo>
+      <Logo to="/">Home</Logo>
 
       <div style={{float: 'right'}}>
         <AppLink to="/search">

@@ -49,12 +49,12 @@ class PostForm extends React.Component {
 
       <FormRow>
         <Label for="title">Title</Label>
-        <Input type="text" name="title" defaultValue={this.props.post.title || ''} required />
+        <Input type="text" name="title" defaultValue={(this.props.post && this.props.post.title) || ''} required />
       </FormRow>
 
       <FormRow>
         <Label for="content">Content</Label>
-        <Input type="text" name="content" defaultValue={this.props.post.content || ''} required />
+        <Input type="text" name="content" defaultValue={(this.props.post && this.props.post.content) || ''} required />
       </FormRow>
 
       <Button type="submit" disabled={this.state.disabled}>Submit</Button>

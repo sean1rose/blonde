@@ -24,6 +24,8 @@ class PostsProvider extends React.Component {
     const query = Firebase.firestore()
       .collection('posts')
       .onSnapshot(this.setPosts, this.handleError)
+      // onSnapshot === listen to the collection, with this.setPosts grabbing the immediate snapshot of current contents
+        // https://firebase.google.com/docs/firestore/query-data/listen
 
     this.setState({
       unsubscribe: query,

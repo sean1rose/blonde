@@ -5,9 +5,14 @@ const FormRow = styled.div`
   margin: 0 0 1rem;
 `
 
-const Label = styled.label`
+const TopLabel = styled.label`
   display: block;
   margin: 0 0 .33rem;
+`
+
+const Label = styled.label`
+  display: inline;
+  margin: 0 1%;
 `
 
 const Input = styled.input`
@@ -37,6 +42,7 @@ const Button = styled.button`
 export {
   FormRow,
   Label,
+  TopLabel,
   Input,
   Button,
 }

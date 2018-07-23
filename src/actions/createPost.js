@@ -15,6 +15,7 @@ const createPost = values => {
 
   return Firebase.firestore()
     .collection('posts')
+    // https://firebase.google.com/docs/firestore/manage-data/add-data
     .add(prepareDocForCreate(values))
     .then( () => values)
     .catch( error => {

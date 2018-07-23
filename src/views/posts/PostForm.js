@@ -13,6 +13,7 @@ import React from 'react'
 import {
   FormRow,
   Label,
+  TopLabel,
   Input,
   Button,
 } from '../../styles/forms'
@@ -30,11 +31,18 @@ class PostForm extends React.Component {
       disabled: true,
     })
 
-    const {title, content} = event.target.elements
+    const {title, one, two, three, four, five} = event.target.elements
 
+    // determines structure of firestore 'posts' collection
     const values = {
       title: title.value,
-      content: content.value,
+      one: one.value,
+      two: two.value,
+      three: three.value,
+      four: four.value,
+      five: five.value,
+      // createdBy
+      //  createdOn
     }
 
     this.props.onSubmit(values).then(() => {
@@ -48,14 +56,35 @@ class PostForm extends React.Component {
     return <form onSubmit={this.submit}>
 
       <FormRow>
-        <Label for="title">Title</Label>
+        <TopLabel for="title">List Name:</TopLabel>
         <Input type="text" name="title" defaultValue={(this.props.post && this.props.post.title) || ''} required />
       </FormRow>
 
       <FormRow>
-        <Label for="content">Content</Label>
-        <Input type="text" name="content" defaultValue={(this.props.post && this.props.post.content) || ''} required />
+        <Label for="one">1) </Label>
+        <Input type="text" name="one" defaultValue={(this.props.post && this.props.post.one) || ''} required />
       </FormRow>
+
+      <FormRow>
+        <Label for="two">2) </Label>
+        <Input type="text" name="two" defaultValue={(this.props.post && this.props.post.two) || ''} required />
+      </FormRow>
+
+      <FormRow>
+        <Label for="three">3) </Label>
+        <Input type="text" name="three" defaultValue={(this.props.post && this.props.post.three) || ''} required />
+      </FormRow>
+
+      <FormRow>
+        <Label for="four">4) </Label>
+        <Input type="text" name="four" defaultValue={(this.props.post && this.props.post.four) || ''} required />
+      </FormRow>
+
+      <FormRow>
+        <Label for="five">5) </Label>
+        <Input type="text" name="five" defaultValue={(this.props.post && this.props.post.five) || ''} required />
+      </FormRow>
+
 
       <Button type="submit" disabled={this.state.disabled}>Submit</Button>
 

@@ -17,7 +17,14 @@ const Post = ({slug}) => (
           <h1>{post.title}</h1>
           <LikeCount post={post} />
           <LikeButton post={post} />
-          <p>{post.content}</p>
+          <ol>
+            <li>{post.one}</li>
+            <li>{post.two}</li>
+            <li>{post.three}</li>
+            <li>{post.four}</li>
+            <li>{post.five}</li>
+          </ol>
+          {/* <p>{post.content}</p> */}
           <AuthProvider>
             {auth => (
               auth ? <AppLink to={`/${post.slug}/edit`}>Edit</AppLink> : null
